@@ -15,7 +15,14 @@ function main() {
     const server = new grpc.Server();
 
     server.addService(routes.Greeter.service, {SayHello: sayHello});
-    server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
+
+    // gRPC 서버 시작
+    server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), (error, port) => {
+        if (error) {
+            console.error(error);
+            return;
+        }
+
         server.start();
         console.log('gRPC server running at http://0.0.0.0:50051');
     });

@@ -1,7 +1,7 @@
 {
   "name": "express-grpc",
   "version": "1.0.0",
-  "description": "",
+  "description": "gRPC 연동",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,8 @@
     "grpc:server": "node grpc.server.js",
     "grpc:client": "node grpc.client.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["gRPC"],
+  "author": "woonyzzang",
   "license": "ISC",
   "dependencies": {
     "@grpc/grpc-js": "^1.10.8",

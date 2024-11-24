@@ -11,5 +11,19 @@ message HelloReply {
 }
 
 service Greeter {
+  // 단일 요청
+  // 클라이언트가 서버에 단일 요청을 보내고 일반 함수 호출처럼 단일 응답을 받습니다.
   rpc SayHello (HelloRequest) returns (HelloReply); // SayHello 메서드 정의
+
+  // 서버 스트리밍 요청
+  // 서버가 클라이언트의 요청에 대한 응답으로 메시지 스트림을 반환한다는 점을 제외하면 단항 RPC와 유사합니다.
+  //rpc SayHelloStream (HelloRequest) returns (stream HelloReply);
+
+  // 클라이언트 스트리밍 요청
+  // 클라이언트가 단일 메시지 대신 서버에 메시지 스트림을 보내는 것을 제외하고는 단항 RPC와 유사합니다.
+  //rpc SayHelloClientStream (stream HelloRequest) returns (HelloReply);
+
+  // 양방향 스트리밍
+  // 서버, 클라이언트 양쪽에서 메시지 스트림을 보냅니다.
+  //rpc SayHelloBidirectionalStream (stream HelloRequest) returns (stream HelloReply);
 }
