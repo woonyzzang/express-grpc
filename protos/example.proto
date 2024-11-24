@@ -1,0 +1,15 @@
+syntax = "proto3"; // proto3 버전 문법 사용
+
+package helloworld; // 패키지 이름
+
+message HelloRequest {
+  string name = 1; // 필드 'name'은 1번 필드
+}
+
+message HelloReply {
+  string message = 1; // 필드 'message'는 1번 필드
+}
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply); // SayHello 메서드 정의
+}
